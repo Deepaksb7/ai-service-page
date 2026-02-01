@@ -7,6 +7,7 @@ import { CaseStudies } from "@/components/CaseStudies";
 import { Testimonials } from "@/components/Testimonials";
 import { Pricing } from "@/components/Pricing";
 import { ContactSidebar } from "@/components/ContactSidebar";
+import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { ScrollManager } from "@/components/ScrollManager";
 
@@ -22,6 +23,7 @@ export default function Home() {
       <CaseStudies />
       <Testimonials />
       <Pricing />
+      <Contact />
       <ContactSidebar />
       <Footer />
     </main>
