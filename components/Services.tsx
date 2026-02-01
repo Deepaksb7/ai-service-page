@@ -54,7 +54,7 @@ export function Services() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[350px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-auto md:auto-rows-[350px]">
           {/* Card 1: Large Span */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
