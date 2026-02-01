@@ -22,8 +22,27 @@ export function SmoothScroll() {
 
     requestAnimationFrame(raf);
 
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest("a");
+      if (anchor && anchor.href.includes("#")) {
+        // Only prevent default if it's an internal link
+        const url = new URL(anchor.href);
+        if (url.pathname === window.location.pathname) {
+          e.preventDefault();
+          const id = url.hash;
+          if (id && document.querySelector(id)) {
+            lenis.scrollTo(id, { offset: -80 }); // Offset for fixed navbar
+          }
+        }
+      }
+    };
+
+    document.addEventListener("click", handleAnchorClick);
+
     return () => {
       lenis.destroy();
+      document.removeEventListener("click", handleAnchorClick);
     };
   }, []);
 
